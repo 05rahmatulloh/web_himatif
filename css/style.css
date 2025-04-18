@@ -296,8 +296,8 @@ a {
     margin-bottom: 20px; }
     .feature .icon:before {
       content: "";
-      width: 33px;
-      height: 33px;
+      width: 55px;
+      height: 55px;
       position: absolute;
       background: rgba(59, 93, 80, 0.2);
       border-radius: 50%;
