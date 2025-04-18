@@ -717,3 +717,13 @@ textarea {
       object-fit: cover;
       border-radius: 20px;
     }
+
+
+       @media (max-width: 500px) {
+
+#gambar{
+  max-width:300px;
+}
+
+
+       }
