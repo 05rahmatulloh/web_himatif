@@ -1,0 +1,21 @@
+[
+  {
+    "nama": "Kaos",
+    "harga": "Rp150.000",
+    "gambar": "images/kaos.png"
+  },
+  {
+    "nama": "Kemeja 1",
+    "harga": "Rp150.000",
+    "gambar": "images/kemeja1.png"
+  }
+  ,  {
+    "nama": "Kemeja 2",
+    "harga": "Rp150.000",
+    "gambar": "images/kemeja2.png"
+  },  {
+    "nama": "Laptop",
+    "harga": "Rp150.000",
+    "gambar": "images/leptop.png"
+  }
+]

@@ -79,120 +79,35 @@
 
 		<div class="untree_co-section product-section before-footer-section">
 		    <div class="container">
-		      	<div class="row">
+		      	<div class="row" id="produk-container">
 
+
+
+
+					
 		      		<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					<div class="col-12 col-md-4 col-lg-3 mb-5" >
+						<a class="product-item" href="https://wa.me/6281338613704?text=Halo%20saya%20tertarik%20dengan%20Produk%20Anda
+">
 							<img src="images/kaos.png" class="img-fluid product-thumbnail" style="max-height: 216px;">
 							<h3 class="product-title">kaos</h3>
 							<strong class="product-price">Rp50.000</strong>
 
 							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
+								<img src="images/shopp.svg" class="img-fluid">
 							</span>
 						</a>
 					</div> 
 					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/botol.png" class="img-fluid product-thumbnail" >
-							<h3 class="product-title">Tumbler</h3>
-							<strong class="product-price">Rp50.000</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/kemeja1.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kaos Jerman</h3>
-							<strong class="product-price">Rp80.000</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/kemeja2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kaos Hitam</h3>
-							<strong class="product-price">$43.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
 
 
-					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/tppaket2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Paket 1</h3>
-							<strong class="product-price">Rp110.000</strong>
 
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 1 -->
-						
-					<!-- Start Column 2 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/tppaket3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Paket 2</h3>
-							<strong class="product-price">Rp120.000</strong>
 
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
 
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/paket4.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Paket 3</h3>
-							<strong class="product-price">Rp150.000</strong>
+					<!-- star -->
+ 
 
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/tppaket4.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Paket 4</h3>
-							<strong class="product-price">Rp140.000</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
+					<!-- end -->
 
 		      	</div>
 		    </div>
@@ -306,6 +221,36 @@
 		</footer>
 	
 		<!-- End Footer Section -->	
+
+
+
+  <script>
+    fetch('data.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('produk-container');
+        data.forEach(item => {
+          const div = document.createElement('div');
+          div.className = "col-12 col-md-4 col-lg-3 mb-5";
+          div.innerHTML = `
+						<a class="product-item" href="https://wa.me/6281338613704?text=Halo%20saya%20tertarik%20dengan%20Produk%20Anda
+">
+							<img src="${item.gambar}" class="img-fluid product-thumbnail" style="max-height: 216px;">
+							<h3 class="product-title">${item.nama}</h3>
+							<strong class="product-price">${item.harga}</strong>
+
+							<span class="icon-cross">
+								<img src="images/shopp.svg" class="img-fluid">
+							</span>
+						</a>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error("Gagal memuat produk:", err);
+      });
+  </script>
 
 
 		<script src="js/bootstrap.bundle.min.js"></script>
